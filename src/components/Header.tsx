@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, ShoppingCart } from 'lucide-react';
+import { MapPin, Phone, ShoppingCart, FileText } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const Header = () => {
@@ -10,7 +10,13 @@ const Header = () => {
   };
 
   const handleMapClick = () => {
-    window.open('https://maps.app.goo.gl/BaoXjhE', '_blank');
+    const restaurantLocation = "30.919738,-6.916112";
+    window.open(`https://www.google.com/maps/search/?api=1&query=${restaurantLocation}`, '_blank');
+  };
+
+  const handleMenuPDFClick = () => {
+    // Replace with your actual menu PDF URL
+    window.open('/menu.pdf', '_blank');
   };
 
   return (
@@ -20,6 +26,14 @@ const Header = () => {
           <div className="text-3xl font-bold text-orange-600">DJOCO</div>
           
           <nav className="flex gap-3">
+            <button
+              onClick={handleMenuPDFClick}
+              className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg transition-colors"
+            >
+              <FileText size={20} />
+              <span className="hidden md:inline">Menu PDF</span>
+            </button>
+            
             <button
               onClick={handleMapClick}
               className="flex items-center gap-2 bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-colors"
@@ -53,6 +67,6 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

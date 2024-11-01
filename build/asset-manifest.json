@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Yakoub/static/css/main.b08ae332.css",
+    "main.js": "/Yakoub/static/js/main.4f44ea48.js",
+    "index.html": "/Yakoub/index.html",
+    "main.b08ae332.css.map": "/Yakoub/static/css/main.b08ae332.css.map",
+    "main.4f44ea48.js.map": "/Yakoub/static/js/main.4f44ea48.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b08ae332.css",
+    "static/js/main.4f44ea48.js"
+  ]
+}

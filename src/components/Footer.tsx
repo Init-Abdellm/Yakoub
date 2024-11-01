@@ -2,6 +2,12 @@ import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
+  const handleMapClick = () => {
+    // Update with your actual restaurant coordinates
+    const restaurantLocation = "30.919738,-6.916112";
+    window.open(`https://www.google.com/maps/search/?api=1&query=${restaurantLocation}`, '_blank');
+  };
+
   return (
     <footer className="bg-black text-white">
       <div className="container mx-auto px-4 py-12">
