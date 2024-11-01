@@ -15,8 +15,8 @@ const Header = () => {
   };
 
   const handleMenuPDFClick = () => {
-    // Replace with your actual menu PDF URL
-    window.open('/menu.pdf', '_blank');
+    // Use the correct path relative to your deployment
+    window.open(`${process.env.PUBLIC_URL}/menu.pdf`, '_blank');
   };
 
   return (

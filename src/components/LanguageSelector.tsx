@@ -5,31 +5,38 @@ const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      <div className="flex gap-2 bg-white rounded-lg shadow-md p-2">
+    <div className="flex flex-col items-center gap-8">
+      <h1 className="text-4xl font-bold text-restaurant-secondary mb-8">Choose Your Language</h1>
+      <div className="flex gap-4">
         <button
           onClick={() => setLanguage('fr')}
-          className={`px-3 py-1 rounded ${
-            language === 'fr' ? 'bg-orange-500 text-white' : 'hover:bg-orange-100'
+          className={`px-8 py-4 rounded-xl text-xl font-semibold transition-all transform hover:scale-105 ${
+            language === 'fr' 
+              ? 'bg-restaurant-primary text-white shadow-lg' 
+              : 'bg-white text-restaurant-secondary hover:bg-orange-100 border-2 border-restaurant-primary'
           }`}
         >
-          FR
+          Français
         </button>
         <button
           onClick={() => setLanguage('ar')}
-          className={`px-3 py-1 rounded ${
-            language === 'ar' ? 'bg-orange-500 text-white' : 'hover:bg-orange-100'
+          className={`px-8 py-4 rounded-xl text-xl font-semibold transition-all transform hover:scale-105 ${
+            language === 'ar'
+              ? 'bg-restaurant-primary text-white shadow-lg'
+              : 'bg-white text-restaurant-secondary hover:bg-orange-100 border-2 border-restaurant-primary'
           }`}
         >
-          عربي
+          العربية
         </button>
         <button
           onClick={() => setLanguage('en')}
-          className={`px-3 py-1 rounded ${
-            language === 'en' ? 'bg-orange-500 text-white' : 'hover:bg-orange-100'
+          className={`px-8 py-4 rounded-xl text-xl font-semibold transition-all transform hover:scale-105 ${
+            language === 'en'
+              ? 'bg-restaurant-primary text-white shadow-lg'
+              : 'bg-white text-restaurant-secondary hover:bg-orange-100 border-2 border-restaurant-primary'
           }`}
         >
-          EN
+          English
         </button>
       </div>
     </div>

@@ -15,11 +15,20 @@ function AppContent() {
   const { language } = useLanguage();
   const { deliveryType, setDeliveryType } = useCart();
 
+  if (!language) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-orange-100 via-amber-50 to-orange-100">
+        <div className="flex items-center justify-center h-screen">
+          <LanguageSelector />
+        </div>
+      </div>
+    );
+  }
+
   if (!deliveryType) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-orange-100 via-amber-50 to-orange-100">
         <div className="absolute inset-0 bg-black/5 backdrop-blur-sm">
-          <LanguageSelector />
           <DeliveryOption onSelect={setDeliveryType} />
         </div>
       </div>
@@ -43,7 +52,7 @@ function App() {
     <LanguageProvider>
       <CartProvider>
         <Router>
-          <div className="min-h-screen flex flex-col bg-gradient-to-br from-amber-50 via-white to-amber-50 font-restaurant">
+          <div className="min-h-screen flex flex-col font-restaurant bg-gradient-to-br from-amber-50 via-white to-amber-50">
             <AppContent />
           </div>
         </Router>
